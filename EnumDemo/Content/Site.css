@@ -5,6 +5,10 @@
     padding-right: 15px;
 }
 
+body {
+    font-size: 16px;
+}
+
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
@@ -16,5 +20,16 @@
 input,
 select,
 textarea {
-    max-width: 280px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    height: 2.2em;
+    max-width: 180px;
+}
+
+input {
+    padding-left: .5em;
+}
+
+td {
+    padding: .5em;
 }

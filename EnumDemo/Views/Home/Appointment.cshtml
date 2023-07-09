@@ -1,0 +1,36 @@
+﻿@model EnumDemo.Models.AppointmentModel
+@using EnumDemo.Models
+@{
+    ViewBag.Title = "Appointment";
+}
+<main aria-labelledby="title">
+    <h2 id="title">@ViewBag.Title.</h2>
+    <h3>@ViewBag.Message</h3>
+    @using (Html.BeginForm("Submit", "Home", FormMethod.Post)) {
+        <table>
+            <tr>
+                <td>@Html.TextBoxFor(m => m.FirstName, "", new { placeholder = "First Name" }) </td>
+            </tr>
+            <tr>
+                <td>@Html.TextBoxFor(m => m.LastName, "", new { placeholder = "Last Name" }) </td>
+            </tr>
+            <tr>
+                <td>@Html.TextBoxFor(m => m.Email, "", new { placeholder = "Email" }) </td>
+            </tr>
+            <tr>
+                <td>
+                    @Html.DropDownList("Days",
+                        EnumHelper.GetSelectList(typeof(Days)),
+                        "-- Select Day --",
+                        new {
+                            @class = "form-control",
+                            @name = "day"
+                        })
+                </td>
+            </tr>
+            <tr>
+                <td><input type="submit" value="Submit" /></td>
+            </tr>
+        </table>
+    }
+</main>
